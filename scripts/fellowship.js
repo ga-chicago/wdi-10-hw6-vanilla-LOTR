@@ -88,6 +88,13 @@ var makeBuddies = function() {
 }
 
 
+//created function to find and change strider to aragorn
+var beautifulStranger = function() {
+	//get parent element
+	let changeStrider = document.getElementsByTagName('aside');
+	//dig deep and reassign several children deep, im sure theres a better way to do this
+	changeStrider[0].childNodes[0].childNodes[3].innerHTML = 'Aragorn';
+}
 
 
 
