@@ -39,6 +39,23 @@ var makeMiddleEarth = function() {
 }
 
 
+//created makehobbits function that, when called, finds rivendell (the 2nd article tag) and creates an unordered list and list items that display the hobbit's names
+var makeHobbits = function() {
+	//get rivendell (2nd article tag)
+	let theHobs = document.querySelectorAll('article')[1];
+	//create new UL
+	let newUl = document.createElement('ul');
+	//loop through hobbit array and create new Li elements, assigning them to each along with the class of hobbit
+	for (let i = 0; i < hobbits.length; i++) {
+		let tempLi = document.createElement('li');
+		tempLi.class = 'hobbit';
+		tempLi.innerHTML = hobbits[i];
+		newUl.appendChild(tempLi);
+	}
+	//append the whole UL to rivendell
+	theHobs.appendChild(newUl);
+}
+
 
 
 
