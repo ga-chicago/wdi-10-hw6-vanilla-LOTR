@@ -71,6 +71,21 @@ var keepItSecretKeepItSafe = function() {
 }
 
 
+//created make buddies function for storing a list of buddies met along the adventure
+var makeBuddies = function() {
+	//create two new elements, an aside tag to hold the list and a ul tag to hold the li elements
+	let asideTag = document.createElement('aside');
+	let newUl = document.createElement('ul');
+	//loop through the buddies array and create new li for each, assigning their name to the innerhtml then appending them to the ul
+	for (let i = 0; i < buddies.length; i++) {
+		let newLi = document.createElement('li');
+		newLi.innerHTML = buddies[i];
+		newUl.appendChild(newLi);
+	}
+	//appendchild the ul and and aside
+	asideTag.appendChild(newUl);
+	document.body.appendChild(asideTag);
+}
 
 
 
