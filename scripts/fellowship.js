@@ -41,7 +41,6 @@ var makeMiddleEarth = function () {
    
    // append `middle-earth` to your document `body`
 };
-
 makeMiddleEarth();
 
 
@@ -58,7 +57,6 @@ var makeHobbits = function () {
   }
    document.getElementById('The Shire').appendChild(newList)
 };
-
 makeHobbits();
 
 var keepItSecretKeepItSafe = function () {
@@ -71,7 +69,6 @@ var keepItSecretKeepItSafe = function () {
    let frodo = document.getElementsByClassName('hobbit')[0];
    frodo.appendChild(newDiv);
 };
-
 keepItSecretKeepItSafe();
 
 var makeBuddies = function () {
@@ -80,12 +77,25 @@ var makeBuddies = function () {
 
    // attach an `unordered list` of the `'buddies'` in the aside
    let buddyList = document.createElement('ol');
-   newAside.appendChild(buddyList);
+   		for(i = 0; i < buddies.length; i++){
+   			let newBuddy = document.createElement('li');
+   			newBuddy.innerText = buddies[i];
+   			buddyList.appendChild(newBuddy);
+		}
+	newAside.appendChild(buddyList);
    // insert your aside as a child element of `rivendell`
    document.getElementById('Rivendell').appendChild(newAside);
 };
-
 makeBuddies()
+
+
+var beautifulStranger = function () {
+   // change the `'Strider'` text to `'Aragorn'`
+   strider = document.getElementById('Rivendell').getElementsByTagName('li')[3]
+   console.log(strider)
+   strider.innerText = "Aragorn"
+};
+beautifulStranger();
 
 
 
