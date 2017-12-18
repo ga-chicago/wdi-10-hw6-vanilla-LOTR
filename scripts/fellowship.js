@@ -135,6 +135,15 @@ var forgeTheFellowShip = function() {
 }
 
 
+//made a balrog function that finds gandalf in the ul and applies style changes to his tag
+var theBalrog = function() {
+	//find gandalf in the ul
+	let newGandalf = document.getElementsByTagName('li')[4];
+	//apply style changes to his li
+	newGandalf.innerHTML = 'Gandalf the White';
+	newGandalf.style.backgroundColor = 'white';
+	newGandalf.style.border = '1px solid grey';
+}
 
 
 
