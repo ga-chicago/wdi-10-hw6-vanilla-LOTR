@@ -101,16 +101,38 @@ var beautifulStranger = function() {
 var leaveTheShire = function() {
 	//find next article tag (rivendell)
 	let rivendell = document.getElementsByTagName('article')[1];
-	console.log(rivendell);
+	// console.log(rivendell);
 	//find hobbit ul
 	let allHobbits = document.getElementsByTagName('ul')[0];
-	console.log(allHobbits);
+	// console.log(allHobbits);
 	//append hobbits to rivendell which moves the damn thing
 	rivendell.appendChild(allHobbits);
 }
 
 
-
+//created a function that creates a new div inside the rivendell article tag, then moves all the adventurers and buddies into this new div in a new ul
+var forgeTheFellowShip = function() {
+	//get rivendell article
+	let rivendell = document.getElementsByTagName('article')[1];
+	//create new div to append to rivendell
+	let fellowShip = document.createElement('div');
+	//get ALL list items (this will return a node list)
+	let adventurers = document.querySelectorAll('li');
+	console.log(adventurers);
+	//convert the node list into an array using the .from method of the Array object
+	let theParty = Array.from(adventurers);
+	console.log(theParty);
+	//create a new ul to store all the li from the nodelist
+	let newList = document.createElement('ul');
+	//loop through the node list of all li items and assign them to the new ul within the div
+	for (let i = 0; i < theParty.length; i++) {
+		let tempPartyMember = theParty[i];
+		newList.appendChild(tempPartyMember);
+	}
+	//append the ul to the div and the div to the rivendell article
+	fellowShip.appendChild(newList);
+	rivendell.appendChild(fellowShip);
+}
 
 
 
