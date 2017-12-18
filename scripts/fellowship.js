@@ -59,5 +59,23 @@ var makeHobbits = function () {
       // (which is the second article tag on the page)
    // give each hobbit a class of `hobbit`
 };
-
 makeHobbits();
+
+var keepItSecretKeepItSafe = function () {
+   // create a div with an id of `'the-ring'`
+   let divTheRing = document.createElement("div");
+   divTheRing.id = "the-ring";
+   // give the div a class of `'magic-imbued-jewelry'`
+   divTheRing.className = "magic-imbued-jewelry";
+   // add the ring as a child of `Frodo`
+   let frodo = document.querySelector("li");
+   frodo.appendChild(divTheRing);
+};
+
+keepItSecretKeepItSafe();
+
+var makeBuddies = function () {
+   // create an `aside` tag
+   // attach an `unordered list` of the `'buddies'` in the aside
+   // insert your aside as a child element of `rivendell`
+};
