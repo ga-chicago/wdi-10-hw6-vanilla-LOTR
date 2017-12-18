@@ -39,10 +39,10 @@ var makeMiddleEarth = function() {
 }
 
 
-//created makehobbits function that, when called, finds rivendell (the 2nd article tag) and creates an unordered list and list items that display the hobbit's names
+//created makehobbits function that, when called, finds the shire (the 1st article tag) and creates an unordered list and list items that display the hobbit's names
 var makeHobbits = function() {
-	//get rivendell (2nd article tag)
-	let theHobs = document.querySelectorAll('article')[1];
+	//get the shire (1st article tag)
+	let theHobs = document.querySelectorAll('article')[0];
 	//create new UL
 	let newUl = document.createElement('ul');
 	//loop through hobbit array and create new Li elements, assigning them to each along with the class of hobbit
@@ -52,7 +52,7 @@ var makeHobbits = function() {
 		tempLi.innerHTML = hobbits[i];
 		newUl.appendChild(tempLi);
 	}
-	//append the whole UL to rivendell
+	//append the whole UL to the shire
 	theHobs.appendChild(newUl);
 }
 
@@ -97,7 +97,17 @@ var beautifulStranger = function() {
 }
 
 
-
+//created a fuction that moves the ul containing the hobbits from one article tag (the shire) to another (rivendell)
+var leaveTheShire = function() {
+	//find next article tag (rivendell)
+	let rivendell = document.getElementsByTagName('article')[1];
+	console.log(rivendell);
+	//find hobbit ul
+	let allHobbits = document.getElementsByTagName('ul')[0];
+	console.log(allHobbits);
+	//append hobbits to rivendell which moves the damn thing
+	rivendell.appendChild(allHobbits);
+}
 
 
 
