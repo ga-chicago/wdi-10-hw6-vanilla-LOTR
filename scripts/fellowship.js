@@ -39,5 +39,25 @@ var makeMiddleEarth = function () {
 };
 
 makeMiddleEarth();
+console.log("")
 
+// Part 2
+var makeHobbits = function () {
+   // display an `unordered list` of hobbits in the shire
+   // /html/body/article[1]
+   let newUl = document.createElement("ul");
+   let path = document.querySelector("article");
+   path.appendChild(newUl);
+   let pathUl = document.querySelector("ul");
 
+   for(let x = 0; x < hobbits.length; x++){
+   	let newli = document.createElement("li");
+   	newli.className = "hobbit";
+   	newli.innerHTML = hobbits[x];
+   	pathUl.appendChild(newli);
+   }
+      // (which is the second article tag on the page)
+   // give each hobbit a class of `hobbit`
+};
+
+makeHobbits();
