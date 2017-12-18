@@ -118,16 +118,19 @@ var forgeTheFellowShip = function() {
 	let fellowShip = document.createElement('div');
 	//get ALL list items (this will return a node list)
 	let adventurers = document.querySelectorAll('li');
-	console.log(adventurers);
+	// console.log(adventurers);
 	//convert the node list into an array using the .from method of the Array object
 	let theParty = Array.from(adventurers);
-	console.log(theParty);
+	// console.log(theParty);
 	//create a new ul to store all the li from the nodelist
 	let newList = document.createElement('ul');
 	//loop through the node list of all li items and assign them to the new ul within the div
 	for (let i = 0; i < theParty.length; i++) {
 		let tempPartyMember = theParty[i];
+		// console.log(tempPartyMember);
 		newList.appendChild(tempPartyMember);
+		let memberName = tempPartyMember.innerText;
+		console.log(memberName+' has joined the party!');
 	}
 	//append the ul to the div and the div to the rivendell article
 	fellowShip.appendChild(newList);
@@ -144,6 +147,27 @@ var theBalrog = function() {
 	newGandalf.style.backgroundColor = 'white';
 	newGandalf.style.border = '1px solid grey';
 }
+
+
+//created a function that produces 2 alerts and then removes the boromir li item 
+var hornOfGondor = function() {
+	//show alerts
+	alert('The Horn of Gondor has been blown!');
+	alert('Boromir has been killed by the Uruk\'hai!');
+	//select the boromir li item
+	let deadBoromir = document.getElementsByTagName('li')[8];
+	//traverse the DOM up to the parent node (ul) of boromir's li item, then use removeChild method in conjunction with the variable assigned to boromir's li location to remove boromir's li
+	deadBoromir.parentNode.removeChild(deadBoromir);
+}
+
+
+
+
+
+
+
+
+
 
 
 
