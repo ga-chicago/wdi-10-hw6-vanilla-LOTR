@@ -57,7 +57,18 @@ var makeHobbits = function() {
 }
 
 
-
+//created function that adds ring div to frodo li
+var keepItSecretKeepItSafe = function() {
+	//creates ring div
+	let newDiv = document.createElement('div');
+	//assign it id and class
+	newDiv.id = 'the-ring';
+	newDiv.class = 'magic-imbued-jewelry';
+	//find frodo li 
+	let ringFrodo = document.getElementsByTagName('li')[0];
+	//append ring div to frodo
+	ringFrodo.appendChild(newDiv);
+}
 
 
 
