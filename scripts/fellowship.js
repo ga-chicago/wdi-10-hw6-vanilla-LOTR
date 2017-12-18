@@ -61,7 +61,19 @@ var makeHobbits = function () {
 
 makeHobbits();
 
+var keepItSecretKeepItSafe = function () {
+   // create a div with an id of `'the-ring'`
+   let newDiv = document.createElement('div');
+   newDiv.id = 'the-ring';
+   // give the div a class of `'magic-imbued-jewelry'`
+   newDiv.classList.add('magic-imbued-jewelry');
+   // add the ring as a child of `Frodo`
+   let frodo = document.getElementsByClassName('hobbit')[0];
+   console.log(frodo)
+   frodo.appendChild(newDiv);
+};
 
+keepItSecretKeepItSafe();
 
 
 
