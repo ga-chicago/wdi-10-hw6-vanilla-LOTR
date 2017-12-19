@@ -161,6 +161,7 @@ var hornOfGondor = function() {
 }
 
 
+//created function to move frodo and sam li elements to morder article and create new div with an id called mount-doom
 var itsDangerousToGoAlone = function() {
 	let frodoLeaves = document.querySelectorAll('li')[0];
 	let samLeaves = document.querySelectorAll('li')[1];
@@ -171,6 +172,25 @@ var itsDangerousToGoAlone = function() {
 	mntDoom.id = "mount-doom";
 	moveToMorder.appendChild(mntDoom);
 }
+
+
+//creats a div for gollum and appended it to mordor article and moved the-ring div to it
+var weWantsIt = function() {
+	//create gollum & assign him an id
+	let gollumDiv = document.createElement('div');
+	gollumDiv.id = "gollum";
+	//get mordor
+	let morderArticle = document.querySelectorAll('article')[2];
+	//move gollum to mordor and the-ring to gollum
+	morderArticle.appendChild(gollumDiv);
+	let oneRing = document.getElementById('the-ring');
+	gollumDiv.appendChild(oneRing);
+}
+
+
+
+
+
 
 
 
@@ -189,7 +209,7 @@ forgeTheFellowShip();
 theBalrog();
 hornOfGondor();
 itsDangerousToGoAlone();
-
+weWantsIt();
 
 
 
