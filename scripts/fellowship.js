@@ -99,4 +99,18 @@ var beautifulStranger = function () {
 
 beautifulStranger();
 
+var leaveTheShire = function () {
+   // assemble the `hobbits` and move them to `rivendell`
+   let hobbitArray = document.getElementsByClassName("hobbit");
+
+   for (var i = 0; i < hobbitArray.length; i++) {
+		let output = document.querySelector("#middle-earth");
+   		let output2 = output.getElementsByTagName("article");
+   		let output3 = document.getElementsByTagName("ul");
+   		output3[1].appendChild(hobbitArray[i]);
+   };
+
+};
+
+leaveTheShire();
 
