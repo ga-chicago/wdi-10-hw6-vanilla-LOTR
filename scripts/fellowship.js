@@ -98,16 +98,14 @@ var beautifulStranger = function () {
 beautifulStranger();
 
 
-
-// I cannot figure out how to move an object that already exists somewhere.
 var leaveTheShire = function () {
    // assemble the `hobbits` and move them to `rivendell`
    hobbitList = document.getElementsByClassName('hobbit');
-   console.log(hobbitList);
+   // console.log(hobbitList);
    let newList = document.createElement('ul');
 
    for(i = hobbitList.length - 1; i >= 0; i--){
-   	console.log(hobbitList[i])
+   	// console.log(hobbitList[i])
    	newList.appendChild(hobbitList[i])
    }
    document.getElementById('Rivendell').appendChild(newList)
@@ -115,7 +113,21 @@ var leaveTheShire = function () {
 leaveTheShire();	
 
 
+var forgeTheFellowShip = function () {
+   // create a new div called `'the-fellowship'` within `rivendell`
+   let newDiv = document.createElement('div');
+   newDiv.classList.add('the-fellowship');
 
+   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+   let listItems = document.getElementsByTagName('li');
+   for(i = listItems.length - 1; i >= 0; i--){
+   	alert(listItems[i] + " has joined your party")
+   	newDiv.appendChild(listItems[i])
+   }
+   document.getElementById('Rivendell').appendChild(newDiv);
+   // after each character is added make an alert that they // have joined your party
+};
+forgeTheFellowShip();
 
 
 // var theBalrog = function () {
