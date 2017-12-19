@@ -102,15 +102,34 @@ beautifulStranger();
 var leaveTheShire = function () {
    // assemble the `hobbits` and move them to `rivendell`
    let hobbitArray = document.getElementsByClassName("hobbit");
+   let hobbitUl = document.getElementsByTagName("ul")[1];
 
    for (var i = 0; i < hobbitArray.length; i++) {
-		let output = document.querySelector("#middle-earth");
-   		let output2 = output.getElementsByTagName("article");
-   		let output3 = document.getElementsByTagName("ul");
-   		output3[1].appendChild(hobbitArray[i]);
+   		let currentHobbit = hobbitArray[i];
+		// only half the hobbits changes land, dont know why 
+   		hobbitUl.appendChild(currentHobbit);
    };
 
 };
 
 leaveTheShire();
 
+
+var forgeTheFellowShip = function () {
+   // create a new div called `'the-fellowship'` within `rivendell`
+   let theFellowShip = document.createElement("div");
+   let rivendell = document.getElementsByTagName("article")[1];
+   rivendell.appendChild(theFellowShip);
+   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+   for (var i = 0; i < hobbits.length; i++) {
+   		theFellowShip.innerHTML = "<li>"+hobbits[i]+"</li>";
+   		alert(hobbits[i] + " has joined the party");
+   };
+   for (var i = 0; i < buddies.length; i++) {
+   		theFellowShip.innerHTML = "<li>"+buddies[i]+"</li>";
+   		alert(buddies[i] + " has joined the party");
+   };
+   // after each character is added make an alert that they // have joined your party
+};
+
+forgeTheFellowShip();
