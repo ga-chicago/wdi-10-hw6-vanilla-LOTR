@@ -111,7 +111,9 @@ var makeBuddies = function () {
       let buddiesList = document.createElement("li");
           // give hobbit an id
           buddiesList.setAttribute('id', buddies[i]);
-          console.log(buddiesList);
+          buddiesList.innerText = buddies[i];
+
+
           // append hobbit li to ul
           document.getElementById('aside').appendChild(buddiesList);
 
@@ -122,7 +124,12 @@ makeBuddies();
 
 var beautifulStranger = function () {
    // change the `'Strider'` text to `'Aragorn'`
-   buddies[3]="Aragorn"
+   let strider = document.getElementById("Strider");
+
+
+   strider.setAttribute('id', 'Aragorn');
+
+
 };
 beautifulStranger();
 
@@ -138,18 +145,26 @@ var forgeTheFellowShip = function () {
    let div = document.createElement("div");
    div.setAttribute("id", "the-fellowship");
    document.getElementById('Rivendell').appendChild(div)
-   console.log(div);
+
    // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
    for(let i=0; i<hobbits.length; i++)
    {
      let hobbit = document.getElementById(hobbits[i]);
-     document.getElementById("the-fellowship").appendChild(hobbit)
+
+     document.getElementById("the-fellowship").appendChild(hobbit);
    }
    for(let i=0; i<buddies.length; i++)
    {
-    let buddy = document.getElementById(buddies[i])
-    document.getElementById("the-fellowship").appendChild(buddy)
-   }
+
+
+     let buddyIndex = buddies[i]
+    let buddy = document.getElementById(buddyIndex);
+
+
+      let x =document.getElementById("the-fellowship")
+  // console.log(x);
+  //    x.appendChild(buddyIndex);
+    }
    // after each character is added make an alert that they // have joined your party
 
 };
@@ -157,13 +172,16 @@ forgeTheFellowShip();
 
 var theBalrog = function () {
    // change the `'Gandalf'` text to `'Gandalf the White'`
-   let theWhite = document.getElementById('Gandalf the White');
-   let theGrey = document.getElementById('Gandalf');
-   theWhite.appendChild(theGrey);
+   //let theWhite = document.getElementById('Gandalf the White');
+   //let theGrey = document.getElementById('Gandalf');
+
+   document.getElementById('Gandalf the Grey').innerText = 'Gandalf the White';
+
 
    // apply the following style to the element, make the // background 'white', add a grey border
    //document.getElementById('Gandalf the White').style.background-color = "white";
-   document.getElementById('Gandalf the White').style.border = "grey";
+   document.getElementById('Gandalf the Grey').style.backgroundColor = "white";
+   document.getElementById('Gandalf the Grey').style.borderStyle = "groove";
 };
 theBalrog();
 
@@ -172,6 +190,36 @@ var hornOfGondor = function () {
    alert("The Horn of Gondor has been blown!");
    // Boromir's been killed by the Uruk-hai!
    // Remove `Boromir` from the Fellowship
-   node.removeChild(document.getElementById("Boromir"));
+   document.getElementById('aside').removeChild(document.getElementById("Boromir"));
 };
 hornOfGondor();
+/*
+var itsDangerousToGoAlone = function (){
+   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+
+   // add a div with an id of `'mount-doom'` to `Mordor`
+};
+itsDangerousToGoAlone();
+*/
+var itsDangerousToGoAlone = function (){
+   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+   document.getElementById('Mordor').appendChild('Frodo');
+   document.getElementById('Mordor').appendChild('Sam');
+   // add a div with an id of `'mount-doom'` to `Mordor`
+};
+
+var weWantsIt = function () {
+   // Create a div with an id of `'gollum'` and add it to Mordor
+   let div = document.createElement("div");
+   div.setAttribute("id", "Gollum")
+   // Remove `the ring` from `Frodo` and give it to `Gollum`
+   let theRing = document.getElementById('the-ring')
+   let gollum = document.getElementById('Gollum')
+   document.gollum.appendChild(theRing);
+   document.getElementById('Frodo Baggins').removeChild(document.getElementById("the-ring"));
+   // Move Gollum into Mount Doom
+   let article = document.creatElement("article");
+   article.setAttribute('id','Mount-Doom')
+   article.appendChild('Gollum');
+
+};
