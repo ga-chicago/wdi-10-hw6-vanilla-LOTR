@@ -48,7 +48,7 @@ var makeHobbits = function() {
 	//loop through hobbit array and create new Li elements, assigning them to each along with the class of hobbit
 	for (let i = 0; i < hobbits.length; i++) {
 		let tempLi = document.createElement('li');
-		tempLi.class = 'hobbit';
+		tempLi.className = 'hobbit';
 		tempLi.innerHTML = hobbits[i];
 		newUl.appendChild(tempLi);
 	}
@@ -188,7 +188,23 @@ var weWantsIt = function() {
 }
 
 
-
+//created a function that removes gollum and the ring divs completely, and gets all li with a class 'hobbit' and moves them back to the shire
+var thereAndBackAgain = function() {
+	//get gollum and remove the ring from inside his div, then use parentnode and remove child method to remove gollum
+	let gollumDiv = document.getElementById('gollum');
+	gollumDiv.innerHTML = "";
+	gollumDiv.parentNode.removeChild(gollumDiv);
+	//get all li with class 'hobbit' and convert the HTML collection into an array, also get the shire article element and create a new ul
+	let allHobbits = document.getElementsByClassName('hobbit');
+	let theShire = document.getElementsByTagName('article')[0];
+	let hobbArray = Array.from(allHobbits);
+	let newUl = document.createElement('ul');
+	//loop through the hobbit array and append each of them to the new ul, then append the hobbit list to the shire, returning them home
+	for (let i = 0; i < hobbArray.length; i++) {
+		newUl.appendChild(hobbArray[i]);
+	}
+	theShire.appendChild(newUl);
+}
 
 
 
@@ -210,7 +226,7 @@ theBalrog();
 hornOfGondor();
 itsDangerousToGoAlone();
 weWantsIt();
-
+thereAndBackAgain();
 
 
 
