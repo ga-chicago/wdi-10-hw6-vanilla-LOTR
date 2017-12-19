@@ -133,3 +133,14 @@ var forgeTheFellowShip = function () {
 };
 
 forgeTheFellowShip();
+
+var theBalrog = function () {
+   // change the `'Gandalf'` text to `'Gandalf the White'`
+   let gan = document.getElementsByTagName("li");
+   gan[2].innerText = "Gandalf the White";
+   gan[2].style.background = "white";
+   gan[2].style.border = "grey";
+   // apply the following style to the element, make the // background 'white', add a grey border
+};
+
+theBalrog();
