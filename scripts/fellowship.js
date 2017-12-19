@@ -121,7 +121,9 @@ var forgeTheFellowShip = function () {
    // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
    let listItems = document.getElementsByTagName('li');
    for(i = listItems.length - 1; i >= 0; i--){
-   	alert(listItems[i] + " has joined your party")
+   	
+   		//Need to come back and adjust the message
+   	// alert(listItems[i] + " has joined your party")
    	newDiv.appendChild(listItems[i])
    }
    document.getElementById('Rivendell').appendChild(newDiv);
@@ -130,13 +132,16 @@ var forgeTheFellowShip = function () {
 forgeTheFellowShip();
 
 
-// var theBalrog = function () {
+var theBalrog = function () {
    // change the `'Gandalf'` text to `'Gandalf the White'`
-
-
+   let gandalf = document.getElementsByTagName('li')[8]
+   gandalf.innerText = "Gandalf the White";
+   console.log(gandalf)
+   gandalf.style.backgroundColor = "white"
+   gandalf.style.border = "2px solid grey"
    // apply the following style to the element, make the // background 'white', add a grey border
-// };
-
+};
+theBalrog();
 
 
 
