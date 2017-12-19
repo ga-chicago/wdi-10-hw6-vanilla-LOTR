@@ -120,13 +120,13 @@ var forgeTheFellowShip = function () {
    		let hobbit = document.createElement("p");
    		hobbit.innerHTML = hobbits[i];
    		theFellowShip.appendChild(hobbit);
-   		// alert(hobbits[i] + " has joined the party");
+   		alert(hobbits[i] + " has joined the party");
    };
    for (var i = 0; i < buddies.length; i++) {
    		let buddy = document.createElement("p");
    		buddy.innerHTML = buddies[i];
    		theFellowShip.appendChild(buddy);
-   		// alert(buddies[i] + " has joined the party");
+   		alert(buddies[i] + " has joined the party");
    };
    // after each character is added make an alert that they // have joined your party
 };
