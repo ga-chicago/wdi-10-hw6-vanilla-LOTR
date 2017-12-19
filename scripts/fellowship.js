@@ -101,15 +101,9 @@ beautifulStranger();
 
 var leaveTheShire = function () {
    // assemble the `hobbits` and move them to `rivendell`
-   let hobbitArray = document.getElementsByClassName("hobbit");
-   let hobbitUl = document.getElementsByTagName("ul")[1];
-
-   for (var i = 0; i < hobbitArray.length; i++) {
-   		let currentHobbit = hobbitArray[i];
-		// only half the hobbits changes land, dont know why 
-   		hobbitUl.appendChild(currentHobbit);
-   };
-
+   let hobbitArray = document.getElementsByTagName("ul")[0];
+   let hobbitUl = document.getElementsByTagName("article");
+   hobbitUl[1].appendChild(hobbitArray);
 };
 
 leaveTheShire();
@@ -118,16 +112,21 @@ leaveTheShire();
 var forgeTheFellowShip = function () {
    // create a new div called `'the-fellowship'` within `rivendell`
    let theFellowShip = document.createElement("div");
+   theFellowShip.setAttribute("id", "the-fellowship");
    let rivendell = document.getElementsByTagName("article")[1];
    rivendell.appendChild(theFellowShip);
    // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
    for (var i = 0; i < hobbits.length; i++) {
-   		theFellowShip.innerHTML = "<li>"+hobbits[i]+"</li>";
-   		alert(hobbits[i] + " has joined the party");
+   		let hobbit = document.createElement("p");
+   		hobbit.innerHTML = hobbits[i];
+   		theFellowShip.appendChild(hobbit);
+   		// alert(hobbits[i] + " has joined the party");
    };
    for (var i = 0; i < buddies.length; i++) {
-   		theFellowShip.innerHTML = "<li>"+buddies[i]+"</li>";
-   		alert(buddies[i] + " has joined the party");
+   		let buddy = document.createElement("p");
+   		buddy.innerHTML = buddies[i];
+   		theFellowShip.appendChild(buddy);
+   		// alert(buddies[i] + " has joined the party");
    };
    // after each character is added make an alert that they // have joined your party
 };
@@ -150,9 +149,9 @@ var hornOfGondor = function () {
    alert("The Horn of gondor has been blown");
    // Boromir's been killed by the Uruk-hai!
    // Remove `Boromir` from the Fellowship
-   let boro = document.getElementsByTagName("li");
-   let path = document.getElementsByTagName("div")[2];
-   path.removeChild(boro[9])
+   let boro = document.getElementsByTagName("p");
+   let path = document.querySelector("#the-fellowship");
+   path.removeChild(boro[boro.length-1])
 };
 
 hornOfGondor()
@@ -161,10 +160,53 @@ var itsDangerousToGoAlone = function (){
    // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
    // they never made it to the fellowship
    // add a div with an id of `'mount-doom'` to `Mordor`
+   let path = document.querySelector("#the-fellowship");
+   let hobbitToDelete = path.getElementsByTagName("p");
+  
    let doom = document.createElement("div");
    doom.setAttribute("id", "mount-doom");
    let mordor = document.getElementsByTagName("article")[2];
    mordor.appendChild(doom);
+   doom.appendChild(hobbitToDelete[0]);
+   doom.appendChild(hobbitToDelete[1]);
 };
 
 itsDangerousToGoAlone();
+
+ var weWantsIt = function () {
+   // Create a div with an id of `'gollum'` and add it to Mordor
+   let gollum = document.createElement("div");
+   gollum.setAttribute("id", "gollum");
+   let mordor = document.getElementsByTagName("article")[2];
+   mordor.appendChild(gollum);
+   // Remove `the ring` from `Frodo` and give it to `Gollum`
+   let gollumsDiv = document.querySelector("#gollum");
+   let ring = document.querySelector("#the-ring")
+   gollumsDiv.appendChild(ring);
+   // Move Gollum into Mount Doom
+   let doom = document.querySelector("#mount-doom");
+   doom.appendChild(gollumsDiv);
+
+};
+
+weWantsIt();
+
+var thereAndBackAgain = function () {
+   // remove `Gollum` and `the Ring` from the document
+   let gollum = document.querySelector("#gollum");
+   let doom = document.querySelector("#mount-doom");
+   doom.removeChild(gollum);
+   // Move all the `hobbits` back to `the shire`
+   let shire = document.getElementsByTagName("article")[0];
+   let doomhobbits = document.querySelector("#mount-doom");
+   let hobbits = doomhobbits.getElementsByTagName("p")[0];
+   let hobbits2 = doomhobbits.getElementsByTagName("p")[1];
+
+   shire.appendChild(hobbits); 
+   shire.appendChild(hobbits2);
+};
+
+thereAndBackAgain();
+
+
+
