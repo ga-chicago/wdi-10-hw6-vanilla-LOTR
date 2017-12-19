@@ -23,13 +23,11 @@ var makeMiddleEarth = function () {
    // create a section tag with an id of `middle-earth`
    let middleEarth = document.createElement("section");
    middleEarth.setAttribute("id", "middle-earth")
-   console.log(middleEarth)
    // add each land as an `article` tag
    for(let i = 0; i < lands.length; i++){
    		let landArticle = document.createElement("article");
-   		console.log(landArticle);
    		landArticle.innerHTML = "<h1>" + lands[i] + "</h1>";
-   		document.body.appendChild(landArticle)
+   		middleEarth.appendChild(landArticle)
    }
    // inside each `article` tag include an `h1` with the name of the land
 
@@ -76,6 +74,19 @@ keepItSecretKeepItSafe();
 
 var makeBuddies = function () {
    // create an `aside` tag
+   let newAside = document.createElement("aside");
    // attach an `unordered list` of the `'buddies'` in the aside
+   let newBuddiesUl = document.createElement("ul");
+   for (var i = 0; i < buddies.length; i++) {
+   		let buddyLi = document.createElement("li");
+   		buddyLi.innerText = buddies[i];
+   		newBuddiesUl.appendChild(buddyLi);
+   };
    // insert your aside as a child element of `rivendell`
+   //*[@id="middle-earth"]/article[2]
+   let output = document.querySelector("#middle-earth");
+   let output2 = output.getElementsByTagName("article");
+   output2[1].appendChild(newBuddiesUl);
 };
+
+makeBuddies();
