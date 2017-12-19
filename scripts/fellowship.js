@@ -136,16 +136,22 @@ var theBalrog = function () {
    // change the `'Gandalf'` text to `'Gandalf the White'`
    let gandalf = document.getElementsByTagName('li')[8]
    gandalf.innerText = "Gandalf the White";
-   console.log(gandalf)
+   // console.log(gandalf)
    gandalf.style.backgroundColor = "white"
    gandalf.style.border = "2px solid grey"
    // apply the following style to the element, make the // background 'white', add a grey border
 };
 theBalrog();
 
+var hornOfGondor = function () {
+   // pop up an alert that the horn of gondor has been blown
+   alert("The horn of gondor has been blown");
+   // Boromir's been killed by the Uruk-hai!
+   // Remove `Boromir` from the Fellowship
+  console.log(document.getElementsByTagName('li')[4].remove()) 
+};
 
-
-
+hornOfGondor();
 
 
 
