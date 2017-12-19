@@ -76,7 +76,7 @@ var makeBuddies = function () {
    let newAside = document.createElement('aside');
 
    // attach an `unordered list` of the `'buddies'` in the aside
-   let buddyList = document.createElement('ol');
+   let buddyList = document.createElement('ul');
    		for(i = 0; i < buddies.length; i++){
    			let newBuddy = document.createElement('li');
    			newBuddy.innerText = buddies[i];
@@ -92,10 +92,46 @@ makeBuddies()
 var beautifulStranger = function () {
    // change the `'Strider'` text to `'Aragorn'`
    strider = document.getElementById('Rivendell').getElementsByTagName('li')[3]
-   console.log(strider)
+   // console.log(strider)
    strider.innerText = "Aragorn"
 };
 beautifulStranger();
+
+
+
+// I cannot figure out how to move an object that already exists somewhere.
+var leaveTheShire = function () {
+   // assemble the `hobbits` and move them to `rivendell`
+   hobbitList = document.getElementsByClassName('hobbit');
+   console.log(hobbitList);
+   let newList = document.createElement('ul');
+
+   for(i = hobbitList.length - 1; i >= 0; i--){
+   	console.log(hobbitList[i])
+   	newList.appendChild(hobbitList[i])
+   }
+   document.getElementById('Rivendell').appendChild(newList)
+};
+leaveTheShire();	
+
+
+
+
+
+// var theBalrog = function () {
+   // change the `'Gandalf'` text to `'Gandalf the White'`
+
+
+   // apply the following style to the element, make the // background 'white', add a grey border
+// };
+
+
+
+
+
+
+
+
 
 
 
