@@ -148,7 +148,7 @@ var hornOfGondor = function () {
    // alert("The horn of gondor has been blown");
    // Boromir's been killed by the Uruk-hai!
    // Remove `Boromir` from the Fellowship
-  console.log(document.getElementsByTagName('li')[4].remove()) 
+  document.getElementsByTagName('li')[4].remove()
 };
 hornOfGondor();
 
@@ -177,8 +177,18 @@ var weWantsIt = function () {
 };
 weWantsIt();
 
+var thereAndBackAgain = function () {
+   // remove `Gollum` and `the Ring` from the document
+   document.getElementById('gollum').remove()
+   // Move all the `hobbits` back to `the shire`
+   let hobbitList = document.getElementsByClassName('hobbit')
+   console.log(hobbitList)
 
-
+   	for(let i = 0; i < hobbitList.length; i++){
+   		document.getElementById('The Shire').appendChild(hobbitList[i])
+   	}
+};
+thereAndBackAgain();
 
 
 
