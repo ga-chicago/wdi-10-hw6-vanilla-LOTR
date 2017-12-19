@@ -145,16 +145,23 @@ theBalrog();
 
 var hornOfGondor = function () {
    // pop up an alert that the horn of gondor has been blown
-   alert("The horn of gondor has been blown");
+   // alert("The horn of gondor has been blown");
    // Boromir's been killed by the Uruk-hai!
    // Remove `Boromir` from the Fellowship
   console.log(document.getElementsByTagName('li')[4].remove()) 
 };
-
 hornOfGondor();
 
-
-
+var itsDangerousToGoAlone = function (){
+   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+   document.getElementById('Mordor').appendChild(document.getElementsByClassName('hobbit')[0])
+   document.getElementById('Mordor').appendChild(document.getElementsByClassName('hobbit')[0])
+   // add a div with an id of `'mount-doom'` to `Mordor`
+   let newDiv = document.createElement('div');
+   newDiv.classList.add('mount-doom');
+   document.getElementById('Mordor').appendChild(newDiv);
+};
+itsDangerousToGoAlone();
 
 
 
