@@ -156,3 +156,15 @@ var hornOfGondor = function () {
 };
 
 hornOfGondor()
+
+var itsDangerousToGoAlone = function (){
+   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+   // they never made it to the fellowship
+   // add a div with an id of `'mount-doom'` to `Mordor`
+   let doom = document.createElement("div");
+   doom.setAttribute("id", "mount-doom");
+   let mordor = document.getElementsByTagName("article")[2];
+   mordor.appendChild(doom);
+};
+
+itsDangerousToGoAlone();
