@@ -90,3 +90,13 @@ var makeBuddies = function () {
 };
 
 makeBuddies();
+
+var beautifulStranger = function () {
+   // change the `'Strider'` text to `'Aragorn'`
+   let liArray = document.getElementsByTagName("li"); 
+   liArray[7].innerText = "Aragon";
+};
+
+beautifulStranger();
+
+
