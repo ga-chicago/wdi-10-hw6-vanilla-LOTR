@@ -161,11 +161,34 @@ var hornOfGondor = function() {
 }
 
 
+var itsDangerousToGoAlone = function() {
+	let frodoLeaves = document.querySelectorAll('li')[0];
+	let samLeaves = document.querySelectorAll('li')[1];
+	let moveToMorder = document.querySelectorAll('article')[2];
+	moveToMorder.appendChild(frodoLeaves);
+	moveToMorder.appendChild(samLeaves);
+	let mntDoom = document.createElement('div');
+	mntDoom.id = "mount-doom";
+	moveToMorder.appendChild(mntDoom);
+}
 
 
 
 
 
+
+
+
+makeMiddleEarth();
+makeHobbits();
+keepItSecretKeepItSafe();
+makeBuddies();
+beautifulStranger();
+leaveTheShire();
+forgeTheFellowShip();
+theBalrog();
+hornOfGondor();
+itsDangerousToGoAlone();
 
 
 
