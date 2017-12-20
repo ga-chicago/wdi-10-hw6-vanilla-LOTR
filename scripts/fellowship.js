@@ -79,4 +79,27 @@ var makeBuddies = function () {
 
 makeBuddies()
 
+var beautifulStranger = function () {
+   // change the `'Strider'` text to `'Aragorn'`
+   strider = document.getElementById('Rivendell').getElementsByTagName('li')[3]
+   console.log(strider)
+   strider.innerText = "Aragorn"
+};
+beautifulStranger();
+
+
+var leaveTheShire = function () {
+   // assemble the `hobbits` and move them to `rivendell`
+   hobbitList = document.getElementsByClassName('hobbit');
+   console.log(hobbitList);
+  let newList = document.createElement('ul');
+
+   for(i = hobbitList.length - 1; i >= 0; i--){
+     console.log(hobbitList[i])
+     newList.appendChild(hobbitList[i])
+   }
+   document.getElementById('Rivendell').appendChild(newList)
+};
+leaveTheShire(); 
+
 
