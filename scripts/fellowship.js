@@ -119,3 +119,78 @@ leaveTheShire();
 };
 forgeTheFellowShip();
 
+var theBalrog = function () {
+    // change the `'Gandalf'` text to `'Gandalf the White'`
+
+
+   let gandalf = document.getElementsByTagName('li')[8]
+   gandalf.innerText = "Gandalf the White";
+   console.log(gandalf)
+   gandalf.style.backgroundColor = "white"
+   gandalf.style.border = "2px solid grey"
+};
+theBalrog();
+
+
+var hornOfGondor = function () {
+   // pop up an alert that the horn of gondor has been blown
+   alert("The horn of gondor has been blown");
+   // Boromir's been killed by the Uruk-hai!
+   // Remove `Boromir` from the Fellowship
+  console.log(document.getElementsByTagName('li')[4].remove()) 
+};
+hornOfGondor();
+
+var itsDangerousToGoAlone = function (){
+   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+   document.getElementById('Mordor').appendChild(document.getElementsByClassName('hobbit')[0])
+   document.getElementById('Mordor').appendChild(document.getElementsByClassName('hobbit')[0])
+   // add a div with an id of `'mount-doom'` to `Mordor`
+   let newDiv = document.createElement('div');
+   newDiv.classList.add('mount-doom');
+   document.getElementById('Mordor').appendChild(newDiv);
+};
+itsDangerousToGoAlone();
+
+
+
+var weWantsIt = function () {
+   // Create a div with an id of `'gollum'` and add it to Mordor
+   let newDiv = document.createElement('div');
+   newDiv.id = 'gollum'
+   document.getElementById('Mordor').appendChild(newDiv);
+   // Remove `the ring` from `Frodo` and give it to `Gollum`
+   document.getElementById('gollum').appendChild(document.getElementById("the-ring"))
+   // Move Gollum into Mount Doom
+   document.getElementsByClassName('mount-doom')[0].appendChild(document.getElementById('gollum'));
+};
+weWantsIt();
+
+var thereAndBackAgain = function () {
+   // remove `Gollum` and `the Ring` from the document
+   document.getElementById('gollum').remove()
+   // Move all the `hobbits` back to `the shire`
+   let hobbitList = document.getElementsByClassName('hobbit')
+   console.log(hobbitList)
+     for(let i = 0; i < hobbitList.length; i++){
+       document.getElementById('The Shire').appendChild(hobbitList[i])
+     }
+};
+thereAndBackAgain();
+
+ // remove `Gollum` and `the Ring` from the document
+ document.getElementById('gollum').remove()
+
+ // Move all the `hobbits` back to `the shire`
+ let hobbitList = document.getElementsByClassName('hobbit')
+ console.log(hobbitList)
+
+ for(let i = 0; i < hobbitList.length; i++){
+   document.getElementById('The Shire').appendChild(hobbitList[i])
+ }
+ };
+ thereAndBackAgain();
+
+
+
+
