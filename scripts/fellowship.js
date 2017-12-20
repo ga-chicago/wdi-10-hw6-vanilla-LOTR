@@ -66,4 +66,17 @@ var keepItSecretKeepItSafe = function () {
    frodo.appendChild(div)
 };
 
+var makeBuddies = function () {
+   // create an `aside` tag
+   let newAside = document.createElement('aside');
+
+   // attach an `unordered list` of the `'buddies'` in the aside
+   let buddyList = document.createElement('ol');
+   newAside.appendChild(buddyList);
+   // insert your aside as a child element of `rivendell`
+   document.getElementById('Rivendell').appendChild(newAside);
+};
+
+makeBuddies()
+
 
