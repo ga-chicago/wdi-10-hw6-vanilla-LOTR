@@ -2,7 +2,7 @@ console.log("Linked.");
 
 // Dramatis Personae
 var hobbits = [
-  'Frodo Baggins',
+  'Frodo-Baggins',
   'Samwise \'Sam\' Gamgee',
   'Meriadoc \'Merry\' Brandybuck',
   'Peregrin \'Pippin\' Took'
@@ -16,7 +16,7 @@ var buddies = [
   'Boromir'
 ];
 
-var lands = ['The Shire', 'Rivendell', 'Mordor'];
+var lands = ['The-Shire', 'Rivendell', 'Mordor'];
 var body = document.body;
 
 var makeMiddleEarth = function () {
@@ -95,7 +95,7 @@ var keepItSecretKeepItSafe = function () {
 
 
  // add the ring as a child of `Frodo`
-    document.getElementById("Frodo Baggins").appendChild(div);
+    document.getElementById("Frodo-Baggins").appendChild(div);
 };
 keepItSecretKeepItSafe();
 
@@ -193,33 +193,57 @@ var hornOfGondor = function () {
    document.getElementById('aside').removeChild(document.getElementById("Boromir"));
 };
 hornOfGondor();
-/*
+
 var itsDangerousToGoAlone = function (){
    // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+   let mordor = document.getElementById('Mordor')
 
+   let frodo = document.getElementById('Frodo-Baggins')
+   let sam = document.getElementById('Samwise \'Sam\' Gamgee')
+
+   mordor.appendChild(frodo);
+   mordor.appendChild(sam);
    // add a div with an id of `'mount-doom'` to `Mordor`
+   let article = document.createElement("article");
+
+   article.setAttribute('id','Mount-Doom')
+   console.log(article);
+   document.getElementById('Mordor').appendChild(article);
 };
 itsDangerousToGoAlone();
-*/
-var itsDangerousToGoAlone = function (){
-   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
-   document.getElementById('Mordor').appendChild('Frodo');
-   document.getElementById('Mordor').appendChild('Sam');
-   // add a div with an id of `'mount-doom'` to `Mordor`
-};
+
 
 var weWantsIt = function () {
    // Create a div with an id of `'gollum'` and add it to Mordor
    let div = document.createElement("div");
    div.setAttribute("id", "Gollum")
+   console.log(div);
+   console.log(document.getElementById('Mordor'));
+   document.getElementById('Mordor').appendChild(div)
    // Remove `the ring` from `Frodo` and give it to `Gollum`
    let theRing = document.getElementById('the-ring')
    let gollum = document.getElementById('Gollum')
-   document.gollum.appendChild(theRing);
-   document.getElementById('Frodo Baggins').removeChild(document.getElementById("the-ring"));
+   console.log(theRing)
+   console.log(gollum);
+   gollum.appendChild(theRing);
+//   document.getElementById('Frodo-Baggins').removeChild(document.getElementById("the-ring"));
    // Move Gollum into Mount Doom
-   let article = document.creatElement("article");
-   article.setAttribute('id','Mount-Doom')
-   article.appendChild('Gollum');
+   // let article = document.createElement("article");
+   //
+   // article.setAttribute('id','Mount-Doom')
+   // console.log(article);
+   // getElementById.appendChild(article);
 
 };
+weWantsIt();
+
+var thereAndBackAgain = function () {
+   // remove `Gollum` and `the Ring` from the document
+
+   document.getElementById('the-ring');
+   document.getElementById('Gollum');
+   // Move all the `hobbits` back to `the shire`
+  let hobbits = document.getElementById('aside');
+  let shire = document.getElementById('The-Shire');
+};
+thereAndBackAgain();
