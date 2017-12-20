@@ -103,3 +103,19 @@ var leaveTheShire = function () {
 leaveTheShire(); 
 
 
++var forgeTheFellowShip = function () {
+   // create a new div called `'the-fellowship'` within `rivendell`
+   let newDiv = document.createElement('div');
+   newDiv.classList.add('the-fellowship');
+ 
+   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+   let listItems = document.getElementsByTagName('li');
+   for(i = listItems.length - 1; i >= 0; i--){
+     alert(listItems[i] + " has joined your party")
+     newDiv.appendChild(listItems[i])
+   }
+   document.getElementById('Rivendell').appendChild(newDiv);
+   // after each character is added make an alert that they // have joined your party
+};
+forgeTheFellowShip();
+
