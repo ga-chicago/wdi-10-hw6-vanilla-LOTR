@@ -26,6 +26,7 @@ var makeMiddleEarth = function () {
     document.body.appendChild(middleEarth);
     // add id that says middle-earth
     middleEarth.setAttribute('id', 'middle-earth');
+    middleEarth.innerHTML = "Middle Earth";
 
 
     // add each land as an `article` tag
@@ -34,12 +35,14 @@ var makeMiddleEarth = function () {
      let article = document.createElement('article');
      // set article tag id to equal the land
      article.setAttribute('id',lands[i] );
+     article.innerHTML = "Lands"
 
      // append article to middle earth section element
      document.getElementById('middle-earth').appendChild(article);
       // inside each `article` tag include an `h1` with the name of the land
       // (h1 is probably not the best thing to name a variable since it is a css thing)
       let h1 = document.createElement('h1');
+      h1.innerHTML = lands[i];
 
       // append h1 to the corresponding land article element
       document.getElementById(lands[i]).appendChild(h1);
@@ -69,6 +72,8 @@ var makeHobbits = function () {
       // give hobbitsInTheShire an id
       hobbitsInTheShire.setAttribute('id', "Hobbits-in-the-Shire" );
 
+
+
       // append to body
       document.body.appendChild(hobbitsInTheShire);
    // give each hobbit a class of `hobbit`
@@ -78,6 +83,7 @@ var makeHobbits = function () {
           hobbit.setAttribute('id', hobbits[i]);
           // append hobbit li to ul
           document.getElementById("Hobbits-in-the-Shire").appendChild(hobbit);
+          hobbit.innerHTML = hobbits[i];
     }
 
 
@@ -91,7 +97,7 @@ var keepItSecretKeepItSafe = function () {
     div.setAttribute('id', 'the-ring')
  // give the div a class of `'magic-imbued-jewelry'`
     div.setAttribute('class', 'magic-imbued-jewelry');
-
+    div.innerHTML = "Magic-Imbued-Jewelry";
 
 
  // add the ring as a child of `Frodo`
@@ -103,6 +109,7 @@ var makeBuddies = function () {
    // create an `aside` tag
    let aside = document.createElement('aside');
    aside.setAttribute('id', 'aside')
+   aside.innerHTMl = "buddies"
 
    // insert your aside as a child element of `rivendell`
    document.getElementById("Rivendell").appendChild(aside);
@@ -144,12 +151,14 @@ var forgeTheFellowShip = function () {
    // create a new div called `'the-fellowship'` within `rivendell`
    let div = document.createElement("div");
    div.setAttribute("id", "the-fellowship");
+   div.innerHTML = "The Fellowship"
    document.getElementById('Rivendell').appendChild(div)
 
    // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
    for(let i=0; i<hobbits.length; i++)
    {
      let hobbit = document.getElementById(hobbits[i]);
+
 
      document.getElementById("the-fellowship").appendChild(hobbit);
    }
@@ -162,8 +171,9 @@ var forgeTheFellowShip = function () {
 
 
       let x =document.getElementById("the-fellowship")
+
   // console.log(x);
-  //    x.appendChild(buddyIndex);
+    x.appendChild(buddyIndex);
     }
    // after each character is added make an alert that they // have joined your party
 
@@ -209,6 +219,7 @@ var itsDangerousToGoAlone = function (){
    article.setAttribute('id','Mount-Doom')
    console.log(article);
    document.getElementById('Mordor').appendChild(article);
+   article.innerHTML = "Mount Doom";
 };
 itsDangerousToGoAlone();
 
@@ -217,6 +228,7 @@ var weWantsIt = function () {
    // Create a div with an id of `'gollum'` and add it to Mordor
    let div = document.createElement("div");
    div.setAttribute("id", "Gollum")
+   div.innerHTML = "Gollum"
    console.log(div);
    console.log(document.getElementById('Mordor'));
    document.getElementById('Mordor').appendChild(div)
