@@ -9,7 +9,7 @@ var hobbits = [
 ];
 
 var buddies = [
-  'Gandalf the Grey',
+  'Gandalf-the-Grey',
   'Legolas',
   'Gimli',
   'Strider',
@@ -65,7 +65,7 @@ makeMiddleEarth();
 
 var makeHobbits = function () {
    // display an `unordered list` of hobbits in the shire
-   // the readme for this assignment said = (which is the second article tag on the page).  it's the fouth unless I'm doing it wrong
+
    // make variable to store unordered list
    let hobbitsInTheShire = document.createElement('ul');
 
@@ -118,7 +118,7 @@ var makeBuddies = function () {
       let buddiesList = document.createElement("li");
           // give hobbit an id
           buddiesList.setAttribute('id', buddies[i]);
-          buddiesList.innerText = buddies[i];
+          buddiesList.innerHTML = buddies[i];
 
 
           // append hobbit li to ul
@@ -135,6 +135,7 @@ var beautifulStranger = function () {
 
 
    strider.setAttribute('id', 'Aragorn');
+   strider.innerHTML = "Aragorn"
 
 
 };
@@ -162,6 +163,7 @@ var forgeTheFellowShip = function () {
 
      document.getElementById("the-fellowship").appendChild(hobbit);
    }
+   buddies[3]="Aragorn";
    for(let i=0; i<buddies.length; i++)
    {
 
@@ -172,8 +174,8 @@ var forgeTheFellowShip = function () {
 
       let x =document.getElementById("the-fellowship")
 
-  // console.log(x);
-    x.appendChild(buddyIndex);
+
+    x.appendChild(buddy);
     }
    // after each character is added make an alert that they // have joined your party
 
@@ -185,13 +187,14 @@ var theBalrog = function () {
    //let theWhite = document.getElementById('Gandalf the White');
    //let theGrey = document.getElementById('Gandalf');
 
-   document.getElementById('Gandalf the Grey').innerText = 'Gandalf the White';
+   let x = document.getElementById('Gandalf-the-Grey')
+   x.innerHTML = 'Gandalf the White';
 
 
    // apply the following style to the element, make the // background 'white', add a grey border
    //document.getElementById('Gandalf the White').style.background-color = "white";
-   document.getElementById('Gandalf the Grey').style.backgroundColor = "white";
-   document.getElementById('Gandalf the Grey').style.borderStyle = "groove";
+   x.style.backgroundColor = "white";
+   x.style.borderStyle = "groove";
 };
 theBalrog();
 
@@ -200,7 +203,9 @@ var hornOfGondor = function () {
    alert("The Horn of Gondor has been blown!");
    // Boromir's been killed by the Uruk-hai!
    // Remove `Boromir` from the Fellowship
-   document.getElementById('aside').removeChild(document.getElementById("Boromir"));
+  let theFellowship =  document.getElementById('the-fellowship');
+  let boromir = document.getElementById("Boromir");
+   theFellowship.removeChild(boromir);
 };
 hornOfGondor();
 
@@ -217,7 +222,7 @@ var itsDangerousToGoAlone = function (){
    let article = document.createElement("article");
 
    article.setAttribute('id','Mount-Doom')
-   console.log(article);
+
    document.getElementById('Mordor').appendChild(article);
    article.innerHTML = "Mount Doom";
 };
@@ -229,33 +234,33 @@ var weWantsIt = function () {
    let div = document.createElement("div");
    div.setAttribute("id", "Gollum")
    div.innerHTML = "Gollum"
-   console.log(div);
-   console.log(document.getElementById('Mordor'));
+
    document.getElementById('Mordor').appendChild(div)
    // Remove `the ring` from `Frodo` and give it to `Gollum`
    let theRing = document.getElementById('the-ring')
    let gollum = document.getElementById('Gollum')
-   console.log(theRing)
-   console.log(gollum);
+
    gollum.appendChild(theRing);
-//   document.getElementById('Frodo-Baggins').removeChild(document.getElementById("the-ring"));
-   // Move Gollum into Mount Doom
-   // let article = document.createElement("article");
-   //
-   // article.setAttribute('id','Mount-Doom')
-   // console.log(article);
-   // getElementById.appendChild(article);
+
 
 };
 weWantsIt();
 
 var thereAndBackAgain = function () {
    // remove `Gollum` and `the Ring` from the document
+   let theRing = document.getElementById('the-ring')
+   let gollum = document.getElementById('Gollum')
+   let mordor = document.getElementById('Mordor')
 
-   document.getElementById('the-ring');
-   document.getElementById('Gollum');
+   gollum.removeChild(theRing);
+   mordor.removeChild(gollum);
    // Move all the `hobbits` back to `the shire`
-  let hobbits = document.getElementById('aside');
-  let shire = document.getElementById('The-Shire');
+   for(let i = 0; i<hobbits.length; i++){
+   let hobbit = document.getElementById(hobbits[i]);
+
+   let shire = document.getElementById('The-Shire');
+   shire.appendChild(hobbit);
+
+   }
 };
 thereAndBackAgain();
